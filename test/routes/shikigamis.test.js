@@ -31,4 +31,10 @@ describe('shikigami routes', () => {
         });
       });
   });
+
+  it('gets all shikigami', async () => {
+    const res = await request(app).get('/api/v1/shikigami');
+    expect(res.body).toHaveLength(25);
+    expect(res.body).toEqual(expect.any(Array));
+  });
 });
