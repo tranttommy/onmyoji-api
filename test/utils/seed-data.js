@@ -5,12 +5,7 @@ function seedShikigami(count = 25) {
   const shikigamis = [...Array(count)].map(() => ({
     name: chance.name(),
     rarity: chance.natural({ max: 5 }),
-    skins: [
-      {
-        name: 'Base',
-        image_url: chance.avatar()
-      }
-    ]
+    image_url: chance.avatar()
   }));
 
   return Shikigami.create(shikigamis);

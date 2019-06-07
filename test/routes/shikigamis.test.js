@@ -8,26 +8,15 @@ describe('shikigami routes', () => {
     return request(app)
       .post('/api/v1/shikigami')
       .send({
-        name: 'Ootengu',
-        rarity: 4,
-        skins: [
-          {
-            name: 'Base',
-            image_url: 'https://res.cloudinary.com/tasrive/image/upload/v1559281766/onmyoji/shikigami/ootengu.png'
-          }
-        ]
+        name: 'Lord Arakawa',
+        rarity: 4
       })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          name: 'Ootengu',
+          name: 'lord-arakawa',
           rarity: 4,
-          skins: [
-            {
-              name: 'Base',
-              image_url: 'https://res.cloudinary.com/tasrive/image/upload/v1559281766/onmyoji/shikigami/ootengu.png'
-            }
-          ]
+          image_url: 'https://res.cloudinary.com/tasrive/image/upload/v1559281766/onmyoji/shikigami/lord-arakawa.png'
         });
       });
   });
